@@ -1,0 +1,73 @@
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mySwiper1{
+  margin-bottom: 20px;
+}
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-slide{
+      color: #212529;
+      padding: 50px;
+  }
+  .swiper-slide >p{
+    font-size: 23px;
+  }
+  .swiper-slide >h3{
+      font-weight: bold;
+  }
+
+ 
+  /* outro carrossel */
+
+
+  .mySwiper1  .swiper-slide img {
+    display: block;
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+
+  @media (max-width: 768px){
+    .mySwiper1  .swiper-slide img {
+      width: 80px;
+    }
+
+    .swiper-slide{
+      color: #212529;
+      padding: 16px;
+    }
+    .swiper-slide >p{
+      font-size: 16px;
+    }
+    .swiper-slide >h3{
+      font-size: 18px;
+    }
+  }
