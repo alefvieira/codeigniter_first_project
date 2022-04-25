@@ -53,3 +53,10 @@ $route['default_controller'] = 'Pagina';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 // $route['servicos'] = 'pagina/servicos';
+
+// configuração dos modulos
+$route['post'] = 'pagina'; // caso não seja digitado nenhum id vai ser direcionado para a home pag
+$route['post/(:num)'] = 'pagina/post/$1'; // (:num) vai pegar o número depois do post
+// configuração das rotas de login
+$route['login'] = 'setup/login';
+$route['painel'] = 'setup/login';

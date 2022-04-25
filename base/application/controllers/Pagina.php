@@ -64,9 +64,9 @@ class Pagina extends CI_Controller
 		$this->load->view('home', $dados);
 	}
 
-	// public function servicos()
-	// {
-	//     $dados['titulo'] = 'Dev Coutin';
-	// 	$this->load->view('servicos', $dados);
-	// }
+	public function servicos()
+	{
+		$dados['titulo'] = 'Dev Coutin';
+		$this->load->view('servicos', $dados);
+	}
 }
