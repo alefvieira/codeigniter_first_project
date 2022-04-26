@@ -1,0 +1,92 @@
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+input,
+textarea {
+    display: block;
+    margin-bottom: 15px;
+    padding: 5px 6px;
+    width: 96%;
+}
+
+input[type='file'] {
+    padding-left: 0;
+}
+
+textarea {
+    height: 150px;
+}
+
+
+input.botao {
+    max-width: 100%;
+    color: white;
+    padding: 10px;
+    background-color: #30309e;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+
+input.botao:hover {
+    background-color: #30309e99;
+}
+
+.col3 {
+    width: 25%;
+}
+
+.col2 {
+    margin: 0 auto;
+    width: 25%;
+}
+
+.col8 {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.col6 {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.msg-box {
+    width: 96%;
+    border: 1px solid #92929250;
+    padding: 5px;
+    text-align: center;
+}
+
+.div_do_form {
+    padding-top: 80px;
+    display: flex;
+    min-height: 100vh;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
+
+.titulo--h2 {
+    text-align: center;
+    color: #30309e;
+    padding-bottom: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .col3 {
+        width: 5%;
+    }
+
+    .col6 {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+/* 100/12 = 8.33 */

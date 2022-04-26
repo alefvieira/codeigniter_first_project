@@ -3,10 +3,8 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $titulo ?> </title>
@@ -22,45 +20,36 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
      'assets/styleCarrossel.css'
  ); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/painel.css'); ?>">
-
 </head>
-
 <body>
-	<div class="linha">
-		<div class="coluna col3">
+<div class="linha div_do_form">
+		<div class="coluna col2">
 			&nbsp;
 		</div>
-		<div class="coluna col6">
-			<h2><?= $h2 ?></h2>
+		<div class="coluna col8">
+			<h2 class="titulo--h2"><?= $h2 ?></h2>
 			<?php
-				if ($msg = get_msg()) {
-					echo '<div class="msg-box">' . $msg . '</div>';
-				}
+   if ($msg = get_msg()) {
+       echo '<div class="msg-box">' . $msg . '</div>';
+   }
 
-				echo form_open();
+   echo form_open();
 
-				echo form_label('Nome para login: ', 'login');
-				echo form_input('login', set_value('login'), ['autofocus' => 'autofocus']);
+   echo form_label('Usúario: ', 'login');
+   echo form_input('login', set_value('login'), ['autofocus' => 'autofocus']);
 
-				echo form_label('E-mail do administrador do site: ', 'email');
-				echo form_input('email', set_value('email'));
+   echo form_label('Senha: ', 'senha');
+   echo form_password('senha');
 
-				echo form_label('Senha: ', 'senha');
-				echo form_password('senha', set_value('senha'));
+   echo form_submit('enviar', 'Autenticar', ['class' => 'botao']);
 
-				echo form_label('Repita a Senha: ', 'senha2');
-				echo form_password('senha2', set_value('senha2'));
-
-				echo form_submit('enviar', 'Enviar', ['class' => 'botao']);
-
-				echo form_close();
-				?>
+   echo form_close();
+   ?>
 
 		</div>
-		<div class="coluna col3">
+		<div class="coluna col2">
 			&nbsp;
 		</div>
 	</div>
 </body>
-
 </html>

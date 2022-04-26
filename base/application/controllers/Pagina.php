@@ -7,6 +7,7 @@ class Pagina extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('option_model', 'option');
 	}
 
 	public function index()
@@ -59,7 +60,7 @@ class Pagina extends CI_Controller
 
 		endif;
 
-
+		$dados["nome_site"] = $this->option->get_option('nome_site', "Falta alterar");
 		$dados['titulo'] = 'Dev Coutin';
 		$this->load->view('home', $dados);
 	}

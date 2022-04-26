@@ -5,7 +5,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="barra-menu">
 	<header>
 		<nav>
-			<a href="#topo" class="logo evtClick">Coutinho </a>
+			<a href="#topo" class="logo evtClick">
+			<?php
+
+				if($nome_site != null ){
+
+					echo $nome_site;
+
+				}else{
+					echo 'Falta Configurar';
+				}
+			
+			?>
+		
+			</a>
 
 			<div class="mobile-menu">
 				<div class="line1"></div>

@@ -51,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Pagina';
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;
 // $route['servicos'] = 'pagina/servicos';
 
 // configuração dos modulos
@@ -60,3 +60,4 @@ $route['post/(:num)'] = 'pagina/post/$1'; // (:num) vai pegar o número depois d
 // configuração das rotas de login
 $route['login'] = 'setup/login';
 $route['painel'] = 'setup/login';
+// $route['setup/logout'] = "setup/login";
