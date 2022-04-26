@@ -60,4 +60,5 @@ $route['post/(:num)'] = 'pagina/post/$1'; // (:num) vai pegar o número depois d
 // configuração das rotas de login
 $route['login'] = 'setup/login';
 $route['painel'] = 'setup/login';
-// $route['setup/logout'] = "setup/login";
+
+

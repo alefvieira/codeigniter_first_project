@@ -20,6 +20,8 @@ class Setup extends CI_Controller
             redirect('setup/instalar', 'refresh');
         endif;
     }
+
+
     public function instalar()
     {
         if ($this->option->get_option('setup_executado') == 1):
@@ -114,7 +116,7 @@ class Setup extends CI_Controller
                 
             }
             
-            set_msg('<p>Usuário inserido com sucesso</p>');
+            set_msg('<p>Dados atualizados com sucesso !</p>');
             
 
         }
@@ -179,6 +181,7 @@ class Setup extends CI_Controller
                         $this->session->set_userdata('logged', TRUE);
                         $this->session->set_userdata('user_login', $dados_form['login']);
                         $this->session->set_userdata('user_email', $this->option->get_option('user_email'));
+                        $this->session->set_userdata('ir_para', 'painel/config');
                         //fazer o redirect para o painel 
 
                         redirect('setup/alterar');
@@ -216,5 +219,38 @@ class Setup extends CI_Controller
         set_msg("<p>Você saiu do sistema</p>");
         redirect('setup/login', 'refresh');
         
+    }
+
+
+    // rotas para a configuração do painel 
+    // public function servicos(){
+    //     $this->session->set_userdata('ir_para', 'painel/servicos');
+    //     redirect('setup/alterar');
+    // }
+    
+    public function config(){
+        $this->session->set_userdata('ir_para', 'painel/config');
+        redirect('setup/alterar');
+    }
+
+    // public function contato(){
+    //     $this->session->set_userdata('ir_para', 'painel/contato');
+    //     redirect('setup/alterar');
+    // }
+
+    public function nossos_parceiros(){
+        $this->session->set_userdata('ir_para', 'painel/nossos_parceiros');
+        redirect('setup/alterar');
+    }
+
+
+    public function sobre(){
+        $this->session->set_userdata('ir_para', 'painel/sobre');
+        redirect('setup/alterar');
+    }
+
+    public function ultimas_exp(){
+        $this->session->set_userdata('ir_para', 'painel/ultimas_exp');
+        redirect('setup/alterar');
     }
 }
