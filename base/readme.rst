@@ -69,3 +69,12 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+
+link para o campo de formatação de text
+
+para usar as formatações no campo
+https://jqueryte.com/
+
+para utilizar o jquery
+https://jquery.com/download/

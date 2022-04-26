@@ -123,6 +123,10 @@ input.botao:hover {
 	border-radius: 5px;
 }
 
+.editorhtml:focus {
+	box-shadow: none;
+}
+
 .container.servicos input,
 .container.servicos textarea {
 	margin: 0 auto;

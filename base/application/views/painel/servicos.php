@@ -19,6 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 	<link rel="stylesheet" href="<?php echo base_url('assets/style.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/styleCarrossel.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/painel.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/jquery-te-1.4.0.css') ?>">
 
 </head>
 
@@ -88,7 +89,8 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 				echo form_textarea(
 					'conteudo',
 					set_value('descricao'),
-					'placeholder="Seu Assunto" cols="30" rows="10" '
+					['placeholder'=>"Seu Assunto", 'cols'=> '30', 'rows'=>'10', 'class'=>'editorhtml']
+					// 'placeholder= cols="30" rows="10" '
 				);
                 
                 echo form_label('Imagem do serviço Prestado', 'imagem');
@@ -135,6 +137,13 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 	<script src="<?php echo base_url('assets/scripts.js') ?> "></script>
+
+	<script src="<?php echo base_url('assets/jquery-3.6.0.min.js') ?> "></script>
+	<script src="<?php echo base_url('assets/jquery-te-1.4.0.min.js') ?> "></script>
+	<script>
+		// metodo que vai permitir que o elemento que estiver com essa classe vai receber as propriedes dessa função 
+		$('.editorhtml').jqte();
+	</script>
 </body>
 
 </html>
