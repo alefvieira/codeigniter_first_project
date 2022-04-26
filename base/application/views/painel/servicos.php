@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
                                     ?>  <!-- end php -->
                                     <tr>
                                         <td align="left" class="titulo-servico"><?= $linha->titulo ?></td>
-                                        <td align="right" class="acoes-servico"><?= anchor("servicos/editar".$linha->id,"Editar"); ?> | <?= anchor("servicos/excluir".$linha->id,"Excluir") ; ?> | <?= anchor("post/".$linha->id, "Ver", ['target'=> '_blanck']);?> </td>
+                                        <td align="right" class="acoes-servico"><?= anchor("servicos/editar/".$linha->id,"Editar"); ?> | <?= anchor("servicos/excluir/".$linha->id,"Excluir") ; ?> | <?= anchor("post/".$linha->id, "Ver", ['target'=> '_blanck']);?> </td>
                                     </tr>
                                     <?php // ini php
                                 }
@@ -88,7 +88,8 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
                 // crinado textarea
 				echo form_textarea(
 					'conteudo',
-					set_value('descricao'),
+					// a função to_html vai permitir passar para o banco de dados o texto com a configuração estilização feita lá no campo textarea
+					to_html(set_value('conteudo')),
 					['placeholder'=>"Seu Assunto", 'cols'=> '30', 'rows'=>'10', 'class'=>'editorhtml']
 					// 'placeholder= cols="30" rows="10" '
 				);
@@ -108,6 +109,8 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
                 break;
             case "excluir":
+
+				echo "exclusão";
                 break;
             case "atualizar":
                 break;

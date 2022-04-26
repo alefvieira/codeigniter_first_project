@@ -53,8 +53,8 @@ class Servicos extends CI_Controller
                 $dados_form = $this->input->post();
 
                 // criando a lista com contendo os campos no banco de dados
-                $dados_insert['titulo'] = $dados_form['titulo'];
-                $dados_insert['conteudo'] = $dados_form['conteudo'];
+                $dados_insert['titulo'] = to_bd($dados_form['titulo']);
+                $dados_insert['conteudo'] = to_bd($dados_form['conteudo']);
                 $dados_insert['imagem'] = $dados_upload['file_name'];
 
                 // caso esse condicional retorne alguma coisa significa que o serviço foi adicionado com sucesso
@@ -84,6 +84,45 @@ class Servicos extends CI_Controller
 
         $this->load->view('painel/servicos', $dados);
     }
+
+	public function excluir(){
+		 // verificação do usuário
+		 verifica_login();
+
+		//  verifica se foi passado o id pela noticia
+		if($id = $this->uri->segment(3) > 0){
+
+			
+		}else{
+			set_msg("<p>Você deve escolher uma notícia para excluir!</p>");
+			redirect("servicos/listar", 'refresh');
+
+		}
+
+		 // carrega views
+		 $dados['titulo'] = 'Exclusão de Serviços';
+		 $dados['h2'] = 'Exclusão de Serviços';
+		 $dados['nome_site'] = $this->option->get_option('nome_site', "Falta alterar");
+		 $dados['tela'] = 'excluir';
+ 
+		 $this->load->view('painel/servicos', $dados);
+
+	}
+
+	public function editar(){
+		 // verificação do usuário
+		 verifica_login();
+
+
+		 // carrega views
+		 $dados['titulo'] = 'Atualização de Serviços';
+		 $dados['h2'] = 'Atualização de Serviços';
+		 $dados['nome_site'] = $this->option->get_option('nome_site', "Falta alterar");
+		 $dados['tela'] = 'atualizar';
+ 
+		 $this->load->view('painel/servicos', $dados);
+
+	}
 
 }
 

@@ -46,3 +46,21 @@ if(!function_exists('config_uploads')){
 
     }
 }
+
+
+// métodos para salvar a edição do texto com as tags e atributos no banco de dados e puxar do banco de dados com essas formatações
+if(!function_exists('to_bd')){
+    function to_bd($string=null){
+
+        return htmlentities($string);
+
+    }
+}
+
+if(!function_exists('to_html')){
+    function to_html($string=null){
+
+        return html_entity_decode($string);
+
+    }
+}
