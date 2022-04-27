@@ -28,6 +28,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			<ul class="nav-list">
 
+				<li><a class="evtClick" href="<?= base_url("setup")?>">Sign In</a></li>
 				<li><a class="evtClick" href="<?= base_url("#sobre")?>">Sobre Nós</a></li>
 				<li><a class="evtClick" href="<?= base_url("#servicos")?>">Serviços</a></li>
 				<li><a class="evtClick" href="<?= base_url("#xps")?>">Últimas Experiências</a></li>
