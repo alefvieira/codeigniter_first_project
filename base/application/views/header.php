@@ -28,11 +28,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			<ul class="nav-list">
 
-				<li><a class="evtClick" href="#sobre">Sobre Nós</a></li>
-				<li><a class="evtClick" href="#servicos">Serviços</a></li>
-				<li><a class="evtClick" href="#xps">Últimas Experiências</a></li>
-				<li><a class="evtClick" href="#parceiros">Nossos Parceiros</a></li>
-				<li><a class="evtClick" href="#contatos">Entre em Contato</a></li>
+				<li><a class="evtClick" href="<?= base_url("#sobre")?>">Sobre Nós</a></li>
+				<li><a class="evtClick" href="<?= base_url("#servicos")?>">Serviços</a></li>
+				<li><a class="evtClick" href="<?= base_url("#xps")?>">Últimas Experiências</a></li>
+				<li><a class="evtClick" href="<?= base_url("#parceiros")?>">Nossos Parceiros</a></li>
+				<li><a class="evtClick" href="<?= base_url("#contatos")?>">Entre em Contato</a></li>
 			</ul>
 		</nav>
 	</header>

@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
                                     ?>  <!-- end php -->
                                     <tr>
                                         <td align="left" class="titulo-servico"><?= $linha->titulo ?></td>
-                                        <td align="right" class="acoes-servico"><?= anchor("servicos/editar/".$linha->id,"Editar"); ?> | <?= anchor("servicos/excluir/".$linha->id,"Excluir") ; ?> | <?= anchor("post/".$linha->id, "Ver", ['target'=> '_blanck']);?> </td>
+                                        <td align="right" class="acoes-servico"><?= anchor("servicos/editar/".$linha->id,"Editar", ['class'=> "btn__editar"]); ?> <?= anchor("servicos/excluir/".$linha->id,"Excluir", ['class'=> "btn__excluir"]) ; ?> <?= anchor("post/".$linha->id, "Ver", ['target'=> '_blanck', 'class'=> "btn__ver_serv"]);?> </td>
                                     </tr>
                                     <?php // ini php
                                 }

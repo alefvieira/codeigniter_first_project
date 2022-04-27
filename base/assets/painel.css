@@ -171,10 +171,35 @@ input.botao:hover {
 	border-radius: 5px;
 }
 
-/* .est--img-servico {
-	color: #f23d3d;
-	width: 100px;
-} */
+
+
+a.btn__excluir,
+a.btn__editar,
+a.btn__ver_serv {
+
+	display: inline-block;
+	text-align: center;
+	width: 60px;
+	border-radius: 3px;
+	margin: 5px 0;
+	padding: 3px 0;
+	/* border: 1px solid black; */
+	color: #1d1e1f;
+	font-weight: 500;
+}
+
+a.btn__excluir {
+	background-color: #ec5151;
+
+}
+
+a.btn__editar {
+	background-color: #ebdd1d;
+}
+
+a.btn__ver_serv {
+	background-color: #62b362;
+}
 
 @media (max-width: 768px) {
 	.col3 {
