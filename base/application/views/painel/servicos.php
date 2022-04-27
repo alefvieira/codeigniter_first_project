@@ -94,7 +94,7 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 					// 'placeholder= cols="30" rows="10" '
 				);
                 
-                echo form_label('Imagem do serviço Prestado', 'imagem');
+                echo form_label('Imagem do serviço Prestado - tamanho:(50px/50px)', 'imagem');
                 echo form_upload('imagem' );
 
                 echo form_submit(
@@ -104,15 +104,64 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 				);
 
-
+				// class="img__svg--conteudo3"
 
 
                 break;
             case "excluir":
+				echo form_open_multipart('', 'class="form_cadastro__servicos"');
 
-				echo "exclusão";
+                echo form_label("Título:", 'titulo');
+                echo form_input("titulo", set_value('titulo', to_html($servico_id->titulo)));
+
+                
+                echo form_label("Conteúdo:", 'conteudo');
+                // crinado textarea
+				echo form_textarea(
+					'conteudo',
+					// a função to_html vai permitir passar para o banco de dados o texto com a configuração estilização feita lá no campo textarea
+					to_html(set_value('conteudo', to_html($servico_id->conteudo))),
+					['placeholder'=>"Seu Assunto", 'cols'=> '30', 'rows'=>'10', 'class'=>'editorhtml']
+					// 'placeholder= cols="30" rows="10" '
+				);
+                echo '<p><small>Imagem:</small> <br><img src="'.base_url('uploads/'.$servico_id->imagem).'" class ="est--img-servico" alt="Imagem do serviço" ></p>';
+
+                echo form_submit(
+					"enviar",
+					"Excluir Serviço",
+					array("class" => "formatacao--btn")
+
+				);
                 break;
-            case "atualizar":
+            case "editar":
+				echo form_open_multipart('', 'class="form_cadastro__servicos"');
+
+                echo form_label("Título:", 'titulo');
+                echo form_input("titulo", set_value('titulo', to_html($servico_id->titulo)));
+
+                
+                echo form_label("Conteúdo:", 'conteudo');
+                // crinado textarea
+				echo form_textarea(
+					'conteudo',
+					// a função to_html vai permitir passar para o banco de dados o texto com a configuração estilização feita lá no campo textarea
+					to_html(set_value('conteudo', to_html($servico_id->conteudo))),
+					['placeholder'=>"Seu Assunto", 'cols'=> '30', 'rows'=>'10', 'class'=>'editorhtml']
+					// 'placeholder= cols="30" rows="10" '
+				);
+				echo form_label('Imagem do serviço Prestado - tamanho:(50px/50px)', 'imagem');
+                echo form_upload('imagem' );
+                echo '<p><small>Imagem atual:</small> <br><img src="'.base_url('uploads/'.$servico_id->imagem).'" class ="est--img-servico" alt="Imagem do serviço" ></p>';
+
+                echo form_submit(
+					"enviar",
+					"Salvar Serviço",
+					array("class" => "formatacao--btn")
+
+				);
+
+
+
                 break;
 
             default:

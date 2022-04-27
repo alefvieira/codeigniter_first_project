@@ -8,6 +8,7 @@ class Pagina extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('option_model', 'option');
+		$this->load->model('servicos_model', 'servicos');
 	}
 
 	public function index()
@@ -69,5 +70,41 @@ class Pagina extends CI_Controller
 	{
 		$dados['titulo'] = 'Dev Coutin';
 		$this->load->view('servicos', $dados);
+	}
+
+	public function post(){
+		// vai pegar o segundo parametro passado pela url
+		$id = $this->uri->segment(2);
+		if($id > 0){
+			$dados["nome_site"] = $this->option->get_option('nome_site', "Falta alterar");
+
+			// vai comparar no banco de dados se esse id existe
+			if($servicos = $this->servicos->get_single($id)){
+				$dados['titulo'] = to_html($servicos->titulo) . " - Dev Coutin";
+				$dados['ser_titulo'] = to_html($servicos->titulo);
+				$dados['ser_conteudo'] = to_html($servicos->conteudo);
+				$dados['ser_imagem'] = $servicos->imagem;
+
+
+
+			}else{
+				
+				// o id passado pela url não foi encontrado no banco de dados
+				$dados['titulo'] = "Página não encontrada"." - Dev Coutin";
+				$dados['ser_titulo'] = "Notícia Não encontrada";
+				$dados['ser_conteudo'] = '<p>Nenhuma notícia foi encontrada com base nos parâmetros</p>';
+				$dados['ser_imagem'] = '';
+
+			}
+		}
+		else{
+			redirect(base_url(), "refresh");
+		}
+		
+
+			
+		
+
+		$this->load->view('post', $dados);
 	}
 }

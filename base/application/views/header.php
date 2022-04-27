@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <section class="barra-menu">
 	<header>
 		<nav>
-			<a href="#topo" class="logo evtClick">
+			<a class="logo evtClick ir_topo">
 			<?php
 
 				if($nome_site != null ){

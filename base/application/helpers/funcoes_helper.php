@@ -38,7 +38,7 @@ if (!function_exists('verifica_login')) {
 }
 
 if(!function_exists('config_uploads')){
-    function config_upload($path='./uploads', $types='jpg|png', $size=512){
+    function config_upload($path='./uploads', $types='svg|jpg|png', $size=512){
         $config['upload_path'] = $path;
         $config['allowed_types'] = $types;
         $config['max_size'] = $size;
@@ -64,3 +64,18 @@ if(!function_exists('to_html')){
 
     }
 }
+
+// esse metodo vai trazer o resumo de um post
+if(!function_exists('resumo_post')){
+    function resumo_post($string=null, $tamanho=150){
+		$string = to_html($string);
+		$string = strip_tags($string); // metodo que vai remover as tags html
+
+		$string = substr($string, 0 , $tamanho); // metodo que vai pegar a string do indice 0 até o 100
+
+        return $string;
+
+    }
+}
+
+

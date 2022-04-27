@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed'); ?> -->
 <section class="barra-menu">
 	<header>
 		<nav>
-			<a href="#" class="logo evtClick">
+			<a class="ir_topo logo evtClick">
 				<?php echo $nome_site; ?>
 
 			</a>
